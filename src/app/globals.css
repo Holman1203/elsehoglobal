@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --navy: #0A2540;
+  --blue-tech: #0066FF;
+  --green-accent: #00C853;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background-color: #ffffff;
+  color: #1a1a2e;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dark body {
+  background-color: #060f1e;
+  color: #e8edf3;
+}
+
+/* Glassmorphism */
+.glass {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.glass-dark {
+  background: rgba(10, 37, 64, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 102, 255, 0.2);
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #0066FF 0%, #00C853 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-white {
+  background: linear-gradient(135deg, #ffffff 0%, #a8d8ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Section padding */
+.section-pad {
+  @apply py-20 px-4 md:px-8 lg:px-16;
+}
+
+/* Card hover */
+.card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card-hover:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0, 102, 255, 0.15);
+}
+
+/* Button styles */
+.btn-primary {
+  @apply bg-blue-tech text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300;
+  background: linear-gradient(135deg, #0066FF, #0052cc);
+}
+.btn-primary:hover {
+  background: linear-gradient(135deg, #3385ff, #0066FF);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 102, 255, 0.4);
+}
+
+.btn-outline {
+  @apply border-2 border-white text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300;
+}
+.btn-outline:hover {
+  @apply bg-white;
+  color: #0A2540;
+  transform: translateY(-2px);
+}
+
+.btn-green {
+  @apply text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300;
+  background: linear-gradient(135deg, #00C853, #00a043);
+}
+.btn-green:hover {
+  background: linear-gradient(135deg, #33d375, #00C853);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 200, 83, 0.4);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #f1f5f9; }
+::-webkit-scrollbar-thumb { background: #0066FF; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #0052cc; }
+
+/* Intersection observer animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Tech grid background */
+.tech-grid {
+  background-image:
+    linear-gradient(rgba(0, 102, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 102, 255, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Swiper custom */
+.swiper-pagination-bullet {
+  background: rgba(255,255,255,0.5) !important;
+  width: 10px !important;
+  height: 10px !important;
+}
+.swiper-pagination-bullet-active {
+  background: #00C853 !important;
+  width: 28px !important;
+  border-radius: 5px !important;
+  transition: width 0.3s ease !important;
+}
+
+/* Dark mode overrides */
+.dark .glass {
+  background: rgba(10, 37, 64, 0.5);
+  border-color: rgba(0, 102, 255, 0.2);
+}
